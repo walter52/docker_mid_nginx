@@ -25,6 +25,10 @@ existContainer=(`docker ps -a | grep "${dockerName}"`)
 if [ -n "$existContainer" ]; then
     docker stop $dockerName
     docker container rm $dockerName
-    docker image rm $dockerInfo
+    existImages=(`docker images | grep "none" | awk '{print $3}'`)
+    if [ -n "$existImages" ]; then
+        docker rmi $existImages
+    fi
+
 fi
 docker run -d --name $dockerName -d -p 80:80 $dockerInfo
