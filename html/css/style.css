@@ -1,0 +1,14 @@
+.pic-alt {
+  #color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
+  display: inline-block;
+  line-height: 50px; }
+
+
+
+.pic-alt:hover {
+  background: rgba(0,0,0,.3);
+  border-color: #fff; }
